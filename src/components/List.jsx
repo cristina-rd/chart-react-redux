@@ -1,26 +1,31 @@
-import React, { useState } from "react"
-import { connect } from 'react-redux'
+import React, { useState } from "react";
+import { connect } from 'react-redux';
+import store from '../index';
 import { Input } from "./Input";
-import { add } from '../actions/actions.js'
+import ListElement from './ListElement.jsx'
+import { add } from '../actions/actions.js';
 
 let List = ({ dispatch }) => {
-    const [state, setState] = useState(null)
+    const [text, setText] = useState(null)
+    const [number, setNumber] = useState(0)
+
+    let globalList = store ? store.getState().list : null;
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log('SUBMIT')
-        console.log(state)
-        dispatch(add(state))
+        dispatch(add(number, text))
     }
-    const handleChange = (event) => {
-        setState(event.target.value)
-        console.log('CHANGE')
-        console.log(state)
+    const handleChangeText = (event) => {
+        setText(event.target.value)
+    }
+    const handleChangeNumber = (event) => {
+        setNumber(event.target.value)
     }
 
     return (
         <div>
-            <Input addTodo={handleSubmit} createTodo={handleChange} />
+            <Input addTodo={handleSubmit} addText={handleChangeText} addNumber={handleChangeNumber}/>
+            {globalList ? globalList.map((line)=> <ListElement number={line.number} text={line.text} id={line.id} key={line.id} />) : null}
         </div>
     );
 }

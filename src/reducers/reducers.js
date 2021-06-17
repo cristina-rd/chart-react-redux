@@ -5,11 +5,11 @@ const INITIAL_STATE = {
 export function todoApp (state = INITIAL_STATE, action) {
     switch(action.type){
         case 'ADD':
-            console.log(state)
+            console.log('REDUCER', state)
             return { list: 
                 [...state.list, {
                 id: action.payload.id,
-                /* number: action.payload.number, */
+                number: action.payload.number,
                 text: action.payload.text
             }]}
         default:

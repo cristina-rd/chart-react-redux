@@ -3,7 +3,8 @@ import React from 'react';
 export function Input(props) {
     return (
         <form onSubmit={props.addTodo}>
-            <input type='text' id='input' onChange={props.createTodo}/>
+            <input type='number' id='number' onChange={props.addNumber}/>
+            <input type='text' id='text' onChange={props.addText}/>
             <button>Add</button>
         </form>
     )

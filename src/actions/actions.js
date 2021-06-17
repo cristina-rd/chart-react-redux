@@ -1,12 +1,13 @@
 let nextTodoId = 0;
 
-export const add = (text) => {
-    console.log("ENTRO EN LA ACCIÓN")
+export const add = (number, text) => {
+    console.log("ACTION TYPE ADD")
     return {
         type: 'ADD',
         payload: {
             id: nextTodoId++,
             text,
+            number
         }
     }
 }
