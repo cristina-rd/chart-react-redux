@@ -13,18 +13,18 @@ function ChartContainer(props) {
 
     console.log('CHARTTTT', list, created)
 
-/*     useEffect(()=>{}, [state])
- */
-    if (list) {
-        for (let i = 0; i < list.length; i++) {
-            setData(data => [...data, { name: list[i].id, uv: list[i].number, atm: list[i].text }])
+    useEffect(()=>{
+        if (list) {
+            for (let i = 0; i < list.length; i++) {
+                setData(data => [...data, { name: list[i].id, uv: list[i].number, atm: list[i].text }])
+            }
+            return (
+                <div>
+                    {store.getState() ? <Chart data={data} /> : null}
+                </div>
+            )
         }
-        return (
-            <div>
-                {store.getState() ? <Chart data={data} /> : null}
-            </div>
-        )
-    }
+    }, [list])
 
     return (
         <div>
