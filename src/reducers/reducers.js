@@ -1,17 +1,25 @@
 const INITIAL_STATE = {
-    list: []
+    list: [],
+    created: false
 }
 
-export function todoApp (state = INITIAL_STATE, action) {
-    switch(action.type){
+export function todoApp(state = INITIAL_STATE, action) {
+    switch (action.type) {
         case 'ADD':
-            console.log('REDUCER', state)
-            return { list: 
-                [...state.list, {
-                id: action.payload.id,
-                number: action.payload.number,
-                text: action.payload.text
-            }]}
+            return {
+                list:
+                    [...state.list, {
+                        id: action.payload.id,
+                        number: action.payload.number,
+                        text: action.payload.text
+                    }],
+                created: state.created
+            }
+        case 'CREATE':
+            return {
+                list: state.list,
+                created: true
+            }
         default:
             return state
     }

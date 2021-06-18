@@ -1,6 +1,6 @@
+import React from 'react';
 import List from './components/List';
-/* import Graph from './components/graph' */
-
+import ChartContainer from './components/ChartContainer'
 import './styles/App.css';
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
       </header>
       <div>
         <List />
-        {/* <Graph /> */}
+        <ChartContainer />
       </div>
     </div>
   );
