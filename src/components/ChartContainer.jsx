@@ -8,15 +8,11 @@ function ChartContainer(props) {
     let created = store ? store.getState().created : false;
     const [data, setData] = useState([]);
 
-    // uv es el .number (eje Y), name es el .id (eje X), amt es el .text (etiqueta)
-    // cada objeto dentro del array data es un punto --> bucle que recorra state y añada data
-
-    console.log('CHARTTTT', list, created)
-
     useEffect(()=>{
         if (list) {
             for (let i = 0; i < list.length; i++) {
-                setData(data => [...data, { name: list[i].id, uv: list[i].number, atm: list[i].text }])
+                let obj = { name: list[list.length-1].id, uv: list[list.length-1].number, atm: list[list.length-1].text }
+                setData([...data, obj])
             }
             return (
                 <div>
@@ -28,7 +24,7 @@ function ChartContainer(props) {
 
     return (
         <div>
-            {created ? <Chart data={data} /> : null}
+            {created ? <Chart data={data} label="ABDC" /> : null}
         </div>
     )
 }
