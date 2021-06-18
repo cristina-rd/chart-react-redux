@@ -24,7 +24,7 @@ function ChartContainer(props) {
 
     return (
         <div>
-            {created ? <Chart data={data} /> : null}
+            {created ? <Chart data={data} /> : <Chart />}
         </div>
     )
 }
