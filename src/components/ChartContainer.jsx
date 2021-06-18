@@ -8,10 +8,10 @@ function ChartContainer(props) {
     let created = store ? store.getState().created : false;
     const [data, setData] = useState([]);
 
-    useEffect(()=>{
+    useEffect(() => {
         if (list) {
             for (let i = 0; i < list.length; i++) {
-                let obj = { name: list[list.length-1].id, uv: list[list.length-1].number, atm: list[list.length-1].text }
+                let obj = { name: list[list.length - 1].id, uv: list[list.length - 1].number, atm: list[list.length - 1].text }
                 setData([...data, obj])
             }
             return (
@@ -24,7 +24,7 @@ function ChartContainer(props) {
 
     return (
         <div>
-            {created ? <Chart data={data} label="ABDC" /> : null}
+            {created ? <Chart data={data} /> : null}
         </div>
     )
 }

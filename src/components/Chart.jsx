@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
 
 function CustomTooltip({ payload, label, active }) {
   if (active) {
@@ -19,12 +19,12 @@ export default class Chart extends Component {
   render() {
     return (
       <LineChart
-        width={700}
+        width={900}
         height={450}
         data={this.props.data}
         margin={{
           top: 5,
-          right: 30,
+          right: 60,
           left: 20,
           bottom: 5,
         }}
@@ -33,7 +33,6 @@ export default class Chart extends Component {
         <XAxis dataKey="name" />
         <YAxis />
         <Tooltip content={<CustomTooltip />} />
-        <Legend />
         <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
       </LineChart>
     );

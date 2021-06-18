@@ -1,0 +1,35 @@
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+input {
+    margin: 5px;
+    padding: 5px;
+}
+
+div.list {
+    width: 70%;
+    padding: 3rem;
+}
+.add-inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.add-button {
+    background-color: lightskyblue;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    font-size: larger;
+}
+.create-chart-button {
+    background-color: lightgreen;
+    margin: 1rem 0.5rem 0rem 0.5rem;
+    padding: 0.5rem;
+    font-size: larger;
+}
+.retry-button {
+    background-color: lightcoral;
+    padding: 0.5rem;
+}

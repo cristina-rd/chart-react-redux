@@ -9,7 +9,7 @@ function App() {
       <header className="App-header">
         <h1>CREATE YOUR GRAPH</h1>
       </header>
-      <div>
+      <div className="content">
         <List />
         <ChartContainer />
       </div>
