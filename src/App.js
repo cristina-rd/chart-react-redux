@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>CREATE YOUR GRAPH</h1>
+        <h1>CREATE YOUR CHART</h1>
       </header>
       <div className="content">
         <List />

@@ -37,7 +37,7 @@ let List = ({ dispatch }) => {
             <p>YOUR LIST</p>
             {globalList ? globalList.map((line) => <ListElement number={line.number} text={line.text} id={line.id} key={line.id} />) : null}
             <button onClick={handleCreateClick} className="create-chart-button">Create chart</button>
-            <button onClick={() => window.location.reload()} className="retry-button">Retry</button>
+            <button onClick={() => window.location.reload()} className="retry-button">Restart</button>
         </div>
     );
 }
