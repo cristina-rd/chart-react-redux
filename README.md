@@ -2,7 +2,7 @@
 
 After cloning or downloading the repo, you'll need to install npm:
 
-### `npm run start`
+### `npm install`
 
 ## Available Scripts
 
