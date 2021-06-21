@@ -9,14 +9,12 @@ import '../styles/list.css'
 let List = ({ dispatch }) => {
     const [text, setText] = useState(null)
     const [number, setNumber] = useState(0)
-    const [created, setCreated] = useState(false)
 
     let globalList = store ? store.getState().list : null;
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        dispatch(add(number, text))
-        console.log('SUBMIT', store.getState())
+        dispatch(add(number, text));
     }
     const handleChangeText = (event) => {
         setText(event.target.value)
@@ -27,8 +25,6 @@ let List = ({ dispatch }) => {
 
     const handleCreateClick = (event) => {
         dispatch(create(true));
-        setCreated(store.getState().created)
-        console.log('CREATE', store.getState().created, created)
     }
 
     return (
